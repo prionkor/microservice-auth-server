@@ -1,0 +1,6 @@
+node_modules/
+certs/privatekey.pem
+certs/certrequest.csr
+certs/certificate.pem
+curl/
+.env
