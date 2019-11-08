@@ -39,7 +39,12 @@
     "test": "mocha test test/db test/config",
     "test:watch": "npm run test -- --watch",
     "test:integration": "mocha test/integration",
-    "dev:api": "json-server json-server.db.json --port 4000"
+    "dev:api": "json-server json-server.db.json --port 4000",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
+    "seed": "npx sequelize-cli db:seed:all",
+    "keys": "cd certs && openssl genrsa -out privatekey.pem 2048 && openssl req -new -key privatekey.pem -out certrequest.csr && openssl x509 -req -in certrequest.csr -signkey privatekey.pem -out certificate.pem && cd ../"
   },
   "engines": {
     "node": ">=6.7.0",
