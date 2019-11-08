@@ -32,10 +32,9 @@ validate.logAndThrow = (msg) => {
  * @throws  {Error}  If the user does not exist or the password does not match
  * @returns {Object} The user if valid
  */
-validate.user = (user, password) => {
+validate.user = async (user, password) => {
   validate.userExists(user);
-
-  if (!user.validPassword(password)) {
+  if (! await user.validPassword(password)) {
     validate.logAndThrow('User password does not match');
   }
 
