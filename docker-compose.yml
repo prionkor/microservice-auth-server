@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+    mysql:
+        container_name: mysql
+        image: mysql:5.7
+        environment: 
+            - MYSQL_DATABASE=auth
+            - MYSQL_ROOT_PASSWORD=pass
+            - MYSQL_USER=mysql
+            - MYSQL_PASSWORD=pass
+            - DATABASE_HOST=mysql
+    
+    auth:
+        container_name: auth
+        restart: on-failure
+        build: .
+        ports: 
+            - '4000:5002'
+        depends_on: 
+            - mysql
+        environment: 
+            - DB_USER=mysql
+            - DB_PASS=pass
+            - DB_NAME=auth
+            - DB_HOST=mysql

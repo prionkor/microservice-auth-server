@@ -1,26 +1,33 @@
 require('dotenv').config();
 
+const host = process.env.DB_HOST || '127.0.0.1';
+const dialect = 'mysql';
+const username = process.env.DB_USER;
+const password = process.env.DB_PASS;
+const database = process.env.DB_NAME;
+console.log(username, password, database, host, dialect);
+
 module.exports = {
   development: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    username,
+    password,
+    database,
+    host,
+    dialect,
   },
   test: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    username,
+    password,
+    database,
+    host,
+    dialect,
   },
   production: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    host: '127.0.0.1',
-    dialect: 'mysql',
+    username,
+    password,
+    database,
+    host,
+    dialect,
     dialectOptions: {
       socketPath: '/var/run/mysqld/mysqld.sock', // ubuntu
     },
