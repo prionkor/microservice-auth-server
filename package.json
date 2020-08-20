@@ -10,7 +10,7 @@
     "url": "https://github.com/prionkor/microservice-auth-server.git"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.9.x",
     "connect-ensure-login": "^0.1.x",
     "connect-mongo": "^3.1.2",
